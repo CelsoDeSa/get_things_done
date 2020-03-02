@@ -1,0 +1,127 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require bootstrap-datepicker3
+ *= require_tree .
+ *= require_self
+ */
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "material_icons";
+@import "bootstrap";
+
+body {
+    height: 100vh;
+    background-color: rgb(240, 240, 240);
+ }
+
+.navbar {
+    background-color: #dc3545;
+ }
+
+.main {
+    min-height: 90vh;
+    background-color: white;
+}
+
+.vertical-navbar {
+    background-color: #dc3545;
+    min-height: 100vh;
+    min-width: 70px;
+    max-width: 70px;
+}
+
+.logo {
+    max-width: 100%;
+    max-height: 75px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.logo-mini {
+    max-height: 40px;
+}
+
+.navbar-toggler {
+    color: white;
+    font-size: 24px;
+    //margin: 13px 0px 13px 0px;
+    //padding: 0px 0px 0px 0px;
+    cursor: pointer;
+}
+
+
+.nav-link {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: rgb(255, 255, 255);
+}
+
+.nav-item .nav-link i {
+    color: rgb(172, 44, 56);
+    font-size: 36px;
+}
+
+.nav-item:hover .nav-link i {
+    // text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.star {
+    color: rgb(255, 217, 0);
+    font-size: 24px;
+}
+
+.star-table {
+    color: rgb(255, 217, 0);
+}
+
+.nopic {
+    background-color: #dee2e6;
+    min-width: 160px;
+    min-height: 160px;
+    width: 100%;
+    height: 100%;
+}
+
+.thumbs {
+    font-size: 20px;
+}
+
+footer p {
+    font-weight: 600;
+    color: white;
+}
+
+.disclaimer {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-icon, .footer-icon:hover {
+    color: rgb(255, 255, 255);
+    font-size: 36px;
+    text-decoration: none;
+}
+
+.footer-link, .footer-link:hover {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}

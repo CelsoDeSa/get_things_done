@@ -1,0 +1,39 @@
+<br>
+
+<p id="notice"><%= notice %></p>
+
+<div>
+  <div class="row">
+    <div class="col">
+      <h1>Get Things Done!</h1>
+    </div>
+  </div>
+
+  <br>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th colspan="3">Projeto</th>
+        <th colspan="1">Início</th>
+        <th colspan="1">Fim</th>
+        <th colspan="1"  style="min-width: 100px; width: 20%"> 
+          <%= link_to "Novo Projeto", new_project_path, class: "btn btn-primary font-weight-bold btn-sm btn-block" %>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @projects.each do |project| %>
+        <tr>
+          <td><%= project.name %></td>
+          <td><%= project.begin %></td>
+          <td><%= project.end %></td>
+          <td><%= link_to 'Ver', project %></td>
+          <td><%= link_to 'Editar', edit_project_path(project) %></td>
+          <td><%= link_to 'Destruir', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

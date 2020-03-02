@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>Begin:</strong>
+  <%= @project.begin %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @project.end %>
+</p>
+
+  
+
+  <div>
+  <div class="row">
+    <div class="col">
+      <h1>Get Things Done!</h1>
+    </div>
+  </div>
+
+  <br>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th colspan="3"><%= @project.name %></th>
+        <th colspan="1"><%= @project.begin %></th>
+        <th colspan="1"><%= @project.end %></th>
+        <th colspan="1"  style="min-width: 100px; width: 20%"> 
+          <%= link_to '+ Atividade', new_project_activity_path(@project), class:"btn btn-primary font-weight-bold btn-sm btn-block" %>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @activities.each do |activity| %>
+        <tr>
+          <td><%= activity.name %></td>
+          <td><%= activity.begin %></td>
+          <td><%= activity.end %></td>
+          <td><%= activity.finished %></td>
+          <td><%= link_to 'Ver', project_activity_path(@project, activity) %></td>
+          <td><%= link_to 'Editar', edit_project_activity_path(@project, activity) %></td>
+          <td><%= link_to 'Destruir', project_activity_path(@project, activity), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+<%= link_to 'Editar', edit_project_path(@project) %> |
+<%= link_to 'voltar', projects_path %>

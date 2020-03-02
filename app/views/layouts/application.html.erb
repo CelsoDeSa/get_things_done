@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Get Things Done!</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar d-block">
+      <a class="navbar-brand" href="/" aria-label="GTD">
+        <%= image_tag("", class: "logo-mini") %>
+      </a>
+
+      <%= icon('fas', 'bars', class: "navbar-toggler float-right", "data-toggle": "collapse", "data-target": "#navbarText", "aria-controls": "navbarText", "aria-expanded": "false", "aria-label": "Toggle navigation") %>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <p><a href="" class="nav-link">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <p><a href="" class="nav-link">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="container-fluid">
+      <div class="row">
+        
+        <div class="col-xl-3 col-lg-2 col-md-1 col-sm-1 col-xs-0">
+        </div>
+
+        <div class="col-xl-6 col-lg-7 col-md-10 col-sm-10 col-xs-1 main">
+          <%= yield %>
+        </div>
+
+        <div class="col-xl-3 col-lg-2 col-md-1 col-sm-1 col-xs-0">
+        </div>
+
+      </div>
+    </div>    
+    
+    <footer class="footer">
+      <div class="container-fluid bg-secondary">
+
+        <br/>
+
+        <div class="row text-center">
+          <div class="col-3">
+            <p><a href="" class="footer-link">Sobre</a>
+          </div>
+
+          <div class="col-2">
+            <p><a href="" class="footer-link">Contato</a>
+          </div>
+
+          <div class="col-1">            
+            <a class="footer-icon" href="https://twitter.com/CelsoDeSa">
+              <%= icon('fab', "twitter-square") %>
+            </a>
+          </div>
+
+          <div class="col-2">
+            <p><p><a href="" class="footer-link">Termos</a></p>
+          </div>          
+
+          <div class="col-3">
+            <p><p><a href="" class="footer-link">Privacidade</a></p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="container-fluid bg-dark">
+
+        <br />
+
+        <div class="row text-center">
+          <div class="col-1">
+          </div>
+
+          <div class="col-10">
+            <p class="disclaimer">COPYRIGHT © <%= Date.current.year %> · GTD &#9733; Todos os direitos reservados</p>
+          </div>
+
+          <div class="col-1">
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </body>
+</html>
