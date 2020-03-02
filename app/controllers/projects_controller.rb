@@ -1,10 +1,5 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-  before_action :find_project_by_id
-
-  def find_project_by_id
-    @project = Project.find_by_id params[:id]
-  end
 
   # GET /projects
   # GET /projects.json

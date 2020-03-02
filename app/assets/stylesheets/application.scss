@@ -26,7 +26,7 @@ body {
  }
 
 .navbar {
-    background-color: #dc3545;
+    background-color: #17a2b8;
  }
 
 .main {
@@ -35,19 +35,14 @@ body {
 }
 
 .vertical-navbar {
-    background-color: #dc3545;
+    background-color: #17a2b8;
     min-height: 100vh;
     min-width: 70px;
     max-width: 70px;
 }
 
-.logo {
-    max-width: 100%;
-    max-height: 75px;
-    margin-left: 1px;
-    margin-right: 1px;
-    padding-left: 1px;
-    padding-right: 1px;
+.logo, .logo:hover {
+    color: white;
 }
 
 .logo-mini {
@@ -74,7 +69,7 @@ body {
 }
 
 .nav-item .nav-link i {
-    color: rgb(172, 44, 56);
+    color: #17a2b8;
     font-size: 36px;
 }
 

@@ -13,23 +13,31 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.label :name %>
+    <%= form.label :name, "Nome" %>
     <%= form.text_field :name, class: "form-control", :autocomplete => :off %>
   </div>
 
   <div class="form-group">
-    <%= form.label :begin %>
+    <%= form.label :begin, "Início" %>
     <% date = project.begin ? project.begin.strftime('%d/%m/%Y') : nil %>
-    <%= form.text_field :begin, class: "datepicker ", value: date, :autocomplete => :off %>
+    <%= form.text_field :begin, class: "form-control datepicker ", value: date, :autocomplete => :off %>
     
   </div>
 
   <div class="form-group">
-    <%= form.label :end %>
-    <%= form.date_select :end, class: "form-control" %>
+    <%= form.label :end, "Fim" %>
+    <% date = project.end ? project.end.strftime('%d/%m/%Y') : nil %>
+    <%= form.text_field :end, class: "form-control datepicker ", value: date, :autocomplete => :off %>
   </div>
 
   <div class="actions">
-    <%= form.submit class: "btn btn-primary font-weight-bold btn-sm btn-block", value: "Criar Projeto" %>
+    <%= form.submit class: "btn btn-primary font-weight-bold btn-sm", value: "Salvar" %>
+
+    <%= link_to 'Cancelar', projects_path, class: "btn btn-danger font-weight-bold btn-sm" %>
+
+    <% if project.id %>
+      <%= link_to 'Ver', project_path, class: "btn btn-light font-weight-bold btn-sm" %>
+    <% end %>
+  
   </div>
 <% end %>

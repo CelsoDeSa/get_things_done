@@ -11,8 +11,8 @@
 
   <body>
     <nav class="navbar d-block">
-      <a class="navbar-brand" href="/" aria-label="GTD">
-        <%= image_tag("", class: "logo-mini") %>
+      <a class="navbar-brand logo" href="/" aria-label="GTD">
+        <strong>GET THINGS DONE!</strong>
       </a>
 
       <%= icon('fas', 'bars', class: "navbar-toggler float-right", "data-toggle": "collapse", "data-target": "#navbarText", "aria-controls": "navbarText", "aria-expanded": "false", "aria-label": "Toggle navigation") %>
@@ -31,14 +31,15 @@
     <div class="container-fluid">
       <div class="row">
         
-        <div class="col-xl-3 col-lg-2 col-md-1 col-sm-1 col-xs-0">
+        <div class="col-xl-2 col-lg-1 col-md-0 col-sm-0 col-xs-0">
         </div>
 
-        <div class="col-xl-6 col-lg-7 col-md-10 col-sm-10 col-xs-1 main">
+        <div class="col-xl-8 col-lg-10 col-md-12 col-sm-12 col-xs-1 main">
+          <br>
           <%= yield %>
         </div>
 
-        <div class="col-xl-3 col-lg-2 col-md-1 col-sm-1 col-xs-0">
+        <div class="col-xl-2 col-lg-1 col-md-0 col-sm-0 col-xs-0">
         </div>
 
       </div>
@@ -65,11 +66,11 @@
           </div>
 
           <div class="col-2">
-            <p><p><a href="" class="footer-link">Termos</a></p>
+            <p><a href="" class="footer-link">Termos</a></p>
           </div>          
 
           <div class="col-3">
-            <p><p><a href="" class="footer-link">Privacidade</a></p>
+            <p><a href="" class="footer-link">Privacidade</a></p>
           </div>
         </div>
 

@@ -1,5 +1,10 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
+  before_action :find_project_by_id
+
+  def find_project_by_id
+   @project = Project.find_by_id params[:project_id]
+  end
 
   # GET /activities
   # GET /activities.json
@@ -26,29 +31,22 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
 
-    respond_to do |format|
-      if @activity.save
-        format.html { redirect_to @activity, notice: 'Activity was successfully created.' }
-        format.json { render :show, status: :created, location: @activity }
-      else
-        format.html { render :new }
-        format.json { render json: @activity.errors, status: :unprocessable_entity }
-      end
+    if @activity.save
+      redirect_to project_path(params[:project_id])
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /activities/1
   # PATCH/PUT /activities/1.json
   def update
-    respond_to do |format|
+    
       if @activity.update(activity_params)
-        format.html { redirect_to @activity, notice: 'Activity was successfully updated.' }
-        format.json { render :show, status: :ok, location: @activity }
+        redirect_to project_path(params[:project_id])
       else
-        format.html { render :edit }
-        format.json { render json: @activity.errors, status: :unprocessable_entity }
+        render :edit
       end
-    end
   end
 
   # DELETE /activities/1
