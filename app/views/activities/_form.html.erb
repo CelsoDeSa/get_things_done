@@ -19,13 +19,13 @@
   <div class="form-row">
     <div class="col">
       <%= form.label :begin, "Início" %>
-      <% date = activity.begin ? activity.begin.strftime('%d/%m/%Y') : Date.today.strftime('%d/%m/%Y') %>
+      <% date = activity.begin ? activity.begin.strftime('%d/%m/%Y') : project.begin.strftime('%d/%m/%Y') %>
       <%= form.text_field :begin, class: "form-control datepicker ", value: date, :autocomplete => :off %>
     </div>
 
     <div class="col">
       <%= form.label :end, "Fim" %>
-      <% date = activity.end ? activity.end.strftime('%d/%m/%Y') : Date.today.strftime('%d/%m/%Y') %>
+      <% date = activity.end ? activity.end.strftime('%d/%m/%Y') : project.begin.next.strftime('%d/%m/%Y') %>
       <%= form.text_field :end, class: "form-control datepicker ", value: date, :autocomplete => :off %>
     </div>
   </div>

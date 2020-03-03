@@ -4,12 +4,12 @@ class Project < ApplicationRecord
     validates :name, uniqueness: { message: "tem que ser único"}
 
     def status
-        if self.activities.due.first
+        if self.activities.overdue.first
             data_fim_do_projeto = self.end
-            data_atividade_em_andamento = self.activities.due.first ? self.activities.due.first.end : "finalizado"
+            data_atividade_em_andamento = self.activities.overdue.first ? self.activities.overdue.first.end : "finalizado"
 
             (data_fim_do_projeto < data_atividade_em_andamento) ? ["danger", "ATRASADO"] : ["primary", "EM ANDAMENTO"]
-        elsif self.activities.length > 0 && self.activities.due.length == 0
+        elsif self.activities.length > 0 && self.activities.overdue.length == 0
             ["success", "COMPLETO"]
         else
             ["light", "NÃO INICIADO"]

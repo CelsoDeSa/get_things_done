@@ -17,18 +17,21 @@
     <%= form.text_field :name, class: "form-control", :autocomplete => :off %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :begin, "Início" %>
-    <% date = project.begin ? project.begin.strftime('%d/%m/%Y') : Date.today.strftime('%d/%m/%Y') %>
-    <%= form.text_field :begin, class: "form-control datepicker ", value: date, :autocomplete => :off %>
-    
+  <div class="form-row">
+    <div class="col">
+      <%= form.label :begin, "Início" %>
+      <% date = project.begin ? project.begin.strftime('%d/%m/%Y') : Date.today.strftime('%d/%m/%Y') %>
+      <%= form.text_field :begin, class: "form-control datepicker ", value: date, :autocomplete => :off %>
+    </div>
+
+    <div class="col">
+      <%= form.label :end, "Fim" %>
+      <% date = project.end ? project.end.strftime('%d/%m/%Y') : Date.tomorrow.strftime('%d/%m/%Y') %>
+      <%= form.text_field :end, class: "form-control datepicker ", value: date, :autocomplete => :off %>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= form.label :end, "Fim" %>
-    <% date = project.end ? project.end.strftime('%d/%m/%Y') : Date.today.strftime('%d/%m/%Y') %>
-    <%= form.text_field :end, class: "form-control datepicker ", value: date, :autocomplete => :off %>
-  </div>
+  <br>
 
   <div class="actions">
     <%= form.submit class: "btn btn-primary font-weight-bold btn-sm", value: "Salvar" %>

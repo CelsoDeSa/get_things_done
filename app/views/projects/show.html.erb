@@ -37,11 +37,10 @@
           <tr>
             <td><%= activity.name %></td>
             <td><%= activity.begin.strftime('%d/%m/%Y') %></td>
-            <td><%= activity.end.strftime('%d/%m/%Y') %></td>
+            <td class="text-<%= activity.date_overdue %>"><%= activity.end.strftime('%d/%m/%Y') %></td>
             <td>
-              <% finalizada = activity.finished ? ["success", "finalizada"] : ["primary", "em andamento"] %>
-              <span class="badge badge-pill badge-<%= finalizada[0] %>">
-                <%= finalizada[1] %>
+              <span class="badge badge-pill badge-<%= activity.finalizada[0] %>">
+                <%= activity.finalizada[1] %>
               </span>              
             </td>
             <td>
