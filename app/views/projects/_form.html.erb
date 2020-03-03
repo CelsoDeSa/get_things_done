@@ -36,10 +36,10 @@
   <div class="actions">
     <%= form.submit class: "btn btn-primary font-weight-bold btn-sm", value: "Salvar" %>
 
-    <%= link_to 'Cancelar', projects_path, class: "btn btn-danger font-weight-bold btn-sm" %>
+    <%= link_to 'Cancelar', "/", class: "btn btn-danger font-weight-bold btn-sm" %>
 
     <% if project.id %>
-      <%= link_to 'Ver', project_path, class: "btn btn-light font-weight-bold btn-sm" %>
+      <%= link_to 'Ver Atividades', project_path, class: "btn btn-light font-weight-bold btn-sm" %>
     <% end %>
   
   </div>
