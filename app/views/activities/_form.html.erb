@@ -1,11 +1,11 @@
 <%= form_with(model: [project, activity], local: true) do |form| %>
   <% if activity.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+      <h2 class="text-danger">Corrija <%= pluralize(activity.errors.count, "error") %> abaixo:</h2>
 
       <ul>
       <% activity.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li class="text-danger"><%= message %></li>
       <% end %>
       </ul>
     </div>
@@ -19,13 +19,13 @@
   <div class="form-row">
     <div class="col">
       <%= form.label :begin, "Início" %>
-      <% date = activity.begin ? activity.begin.strftime('%d/%m/%Y') : nil %>
+      <% date = activity.begin ? activity.begin.strftime('%d/%m/%Y') : Date.today.strftime('%d/%m/%Y') %>
       <%= form.text_field :begin, class: "form-control datepicker ", value: date, :autocomplete => :off %>
     </div>
 
     <div class="col">
       <%= form.label :end, "Fim" %>
-      <% date = activity.end ? activity.end.strftime('%d/%m/%Y') : nil %>
+      <% date = activity.end ? activity.end.strftime('%d/%m/%Y') : Date.today.strftime('%d/%m/%Y') %>
       <%= form.text_field :end, class: "form-control datepicker ", value: date, :autocomplete => :off %>
     </div>
   </div>

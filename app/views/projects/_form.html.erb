@@ -2,11 +2,11 @@
 <%= form_with(model: project, local: true) do |form| %>
   <% if project.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(project.errors.count, "error") %> impediram esse projeto de ser salvo:</h2>
+      <h2 class="text-danger">Corrija <%= pluralize(project.errors.count, "erro") %> abaixo:</h2>
 
       <ul>
       <% project.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li class="text-danger"><%= message %></li>
       <% end %>
       </ul>
     </div>
@@ -19,14 +19,14 @@
 
   <div class="form-group">
     <%= form.label :begin, "Início" %>
-    <% date = project.begin ? project.begin.strftime('%d/%m/%Y') : nil %>
+    <% date = project.begin ? project.begin.strftime('%d/%m/%Y') : Date.today.strftime('%d/%m/%Y') %>
     <%= form.text_field :begin, class: "form-control datepicker ", value: date, :autocomplete => :off %>
     
   </div>
 
   <div class="form-group">
     <%= form.label :end, "Fim" %>
-    <% date = project.end ? project.end.strftime('%d/%m/%Y') : nil %>
+    <% date = project.end ? project.end.strftime('%d/%m/%Y') : Date.today.strftime('%d/%m/%Y') %>
     <%= form.text_field :end, class: "form-control datepicker ", value: date, :autocomplete => :off %>
   </div>
 

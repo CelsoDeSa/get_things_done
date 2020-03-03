@@ -32,7 +32,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new(activity_params)
 
     if @activity.save
-      redirect_to project_path(params[:project_id])
+      redirect_to project_path(params[:project_id]), notice: 'Atividade criada com sucesso!'
     else
       render :new
     end
@@ -43,7 +43,7 @@ class ActivitiesController < ApplicationController
   def update
     
       if @activity.update(activity_params)
-        redirect_to project_path(params[:project_id])
+        redirect_to project_path(params[:project_id]), notice: 'Atividade atualizada com sucesso!'
       else
         render :edit
       end
@@ -54,7 +54,7 @@ class ActivitiesController < ApplicationController
   def destroy
     @activity.destroy
     respond_to do |format|
-      format.html { redirect_to activities_url, notice: 'Activity was successfully destroyed.' }
+      format.html { redirect_to project_path(params[:project_id]), notice: 'Atividade destruída com sucesso!' }
       format.json { head :no_content }
     end
   end

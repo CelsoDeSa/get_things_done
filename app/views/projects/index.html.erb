@@ -1,18 +1,23 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" class="text-success"><%= notice %></p>  
 
 <div>
+  <div class="row">
+    <div class="col">
+      <h1>Meus Projetos</h1>
+    </div>
+  </div>
 
-  <br>
+    <br>
 
   <table class="table">
     <thead class="thead-dark">
       <tr>
-        <th colspan="1">Projetos</th>
+        <th colspan="1">Projeto</th>
         <th colspan="1">Início</th>
         <th colspan="1">Fim</th>
         <th colspan="1">% Completo</th>
         <th colspan="1">Status</th>
-        <th colspan="2">
+        <th colspan="1">
           <%= link_to "+ Projeto", new_project_path, class: "btn btn-info font-weight-bold btn-block btn-sm" %>
         </th>
       </tr>
@@ -38,9 +43,11 @@
               <%= project.status[1] %>
             </span>
           </td>
-          <td class="float-right">
-            <%= link_to icon('fas', 'edit'), edit_project_path(project), class: "btn btn-outline-dark btn-sm" %>
-            <%= link_to icon('fas', 'trash-alt'), project, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-outline-dark btn-sm" %>
+          <td>
+            <div class="float-right">
+              <%= link_to icon('fas', 'edit'), edit_project_path(project), class: "btn btn-outline-dark btn-sm" %>
+              <%= link_to icon('fas', 'trash-alt'), project, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-outline-dark btn-sm" %>
+            </div>
           </td>
           
         </tr>

@@ -30,4 +30,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      project:
+        name: "Nome do projeto"
+        begin: "Início"
+        end: "Fim"
+      activity:
+        name: "Nome da atividade"
+        begin: "Início"
+        end: "Fim"
+    

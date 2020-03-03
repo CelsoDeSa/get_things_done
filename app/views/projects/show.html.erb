@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>  
+<p id="notice" class="text-success"><%= notice %></p>
 
   <div>
     <div class="row">
       <div class="col">
-        <h1>Get Things Done!</h1>
+        <h1>Atividades do Projeto</h1>
       </div>
     </div>
 
@@ -44,15 +44,17 @@
                 <%= finalizada[1] %>
               </span>              
             </td>
-            <td class="float-right">
-              <%= link_to icon('fas', 'edit'), edit_project_activity_path(@project, activity), class: "btn btn-outline-dark btn-sm" %>
-              <%= link_to icon('fas', 'trash-alt'), project_activity_path(@project, activity), method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-outline-dark btn-sm" %>
+            <td>
+             <div class="float-right">
+                <%= link_to icon('fas', 'edit'), edit_project_activity_path(@project, activity), class: "btn btn-outline-dark btn-sm" %>
+                <%= link_to icon('fas', 'trash-alt'), project_activity_path(@project, activity), method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-outline-dark btn-sm" %>
+              </div>
             </td>
           </tr>
         <% end %>
       </tbody>
     </table>
 
-<%= link_to '+ Atividade', new_project_activity_path(@project), class:"btn btn-info font-weight-bold btn-sm" %>
-<%= link_to 'Projetos', projects_path, class: "btn btn-light" %>
+  <%= link_to '+ Atividade', new_project_activity_path(@project), class:"btn btn-info font-weight-bold btn-sm" %>
+  <%= link_to 'Projetos', projects_path, class: "btn btn-light" %>
 </div>
